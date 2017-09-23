@@ -1,0 +1,87 @@
+<html>
+
+<head>
+  <title>Raindrop</title>
+  <style>
+    html,
+    body {
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<!-- <body onresize="resizeCanvas()"> -->
+
+<body>
+  <!-- <p>RainDrop</P> -->
+  <!-- <canvas id="mainCanvas" width="1000" height="500">
+		</canvas> -->
+
+  <canvas id="mainCanvas">
+      </canvas>
+
+
+  <p id="canvasInfo"></p>
+  <p id="info"></p>
+  <p id="screenInfo"></p>
+
+
+  <script>
+    var canvas = document.getElementById("mainCanvas");
+    // canvas.width = 1000;
+    // canvas.height = 500;
+    canvas.width = document.body.clientWidth;
+    canvas.height = document.body.clientHeight;
+
+    var context = canvas.getContext('2d');
+    var centerX = canvas.width / 2;;
+    var centerY = canvas.height / 2;;
+    var radius = 50;
+
+    // canvas.width = document.body.clientWidth;
+    // canvas.height = document.body.clientHeight;
+
+
+
+
+    drawCircle(centerX, centerY, radius);
+
+    // var canvasBackground = 'black';
+    // context.fillStyle = canvasBackground;
+    // context.fillRect(0, 0, canvas.width, canvas,height);
+
+    function drawCircle(xLocation, yLocation, circleSize) {
+      context.beginPath();
+      context.arc(xLocation, yLocation, circleSize, 0, 2 * Math.PI);
+      context.stroke();
+    }
+
+    document.getElementById("canvasInfo").innerHTML = "canvasInfo " + canvas.width + " " + canvas.height;
+
+    document.getElementById("info").innerHTML = "drawCircle " + centerX + " " + centerY +
+      " " + radius;
+    document.getElementById("screenInfo").innerHTML = "screenInfo " + document.body.clientWidth + " " + document.body.clientHeight;
+
+
+    // function resizeCanvas() {
+    //   canvas.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    //   canvas.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    //
+    //   WIDTH = canvas.width;
+    //   HEIGHT = canvas.height;
+    //
+    //   clearScreen();
+    // }
+    //
+    // function clearScreen() {
+    //   var grd = ctx.createLinearGradient(0, 0, 0, 180);
+    //   grd.addColorStop(0, "#6666ff");
+    //   grd.addColorStop(1, "#aaaacc");
+    //
+    //   ctx.fillStyle = grd;
+    //   ctx.fillRect(0, 0, WIDTH, HEIGHT);
+    // }
+  </script>
+</body>
+
+</html>
