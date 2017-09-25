@@ -7,13 +7,33 @@
     body {
       overflow: hidden;
     }
+
+    canvas {
+      border: 1px solid black;
+    }
+
+    /*body,
+    html {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    canvas {
+      position: absolute;
+    }*/
   </style>
 </head>
 
 <!-- <body onresize="resizeCanvas()"> -->
 
 <body>
-  <!-- <p>RainDrop</P> -->
+  <!-- <p>RainDrop</P>
+  <p id="canvasInfo"></p>
+  <p id="info"></p>
+  <p id="screenInfo"></p> -->
   <!-- <canvas id="mainCanvas" width="1000" height="500">
 		</canvas> -->
 
@@ -21,30 +41,40 @@
       </canvas>
 
 
-  <p id="canvasInfo"></p>
-  <p id="info"></p>
-  <p id="screenInfo"></p>
+
 
 
   <script>
     var canvas = document.getElementById("mainCanvas");
-    // canvas.width = 1000;
-    // canvas.height = 500;
-    canvas.width = document.body.clientWidth;
-    canvas.height = document.body.clientHeight;
+    canvas.width = 1000;
+    canvas.height = 500;
+    // canvas.width = document.body.clientWidth;
+    // canvas.height = document.body.clientHeight;
+    // canvas.width = window.innerWidth;
+    // canvas.height = window.innerHeight;
+
 
     var context = canvas.getContext('2d');
     var centerX = canvas.width / 2;;
     var centerY = canvas.height / 2;;
     var radius = 50;
 
+    document.getElementById("canvasInfo").innerHTML = "canvasInfo " + canvas.width + " " + canvas.height;
+
+    document.getElementById("info").innerHTML = "drawCircle " + centerX + " " + centerY +
+      " " + radius;
+    document.getElementById("screenInfo").innerHTML = "screenInfo " + document.body.clientWidth + " " + document.body.clientHeight;
+
+
+
     // canvas.width = document.body.clientWidth;
     // canvas.height = document.body.clientHeight;
 
+    context.fillStyle = "blue";
+    context.fillRect(0, 0, 300, 300);
 
 
-
-    drawCircle(centerX, centerY, radius);
+    // drawCircle(centerX, centerY, radius);
 
     // var canvasBackground = 'black';
     // context.fillStyle = canvasBackground;
@@ -56,11 +86,11 @@
       context.stroke();
     }
 
-    document.getElementById("canvasInfo").innerHTML = "canvasInfo " + canvas.width + " " + canvas.height;
-
-    document.getElementById("info").innerHTML = "drawCircle " + centerX + " " + centerY +
-      " " + radius;
-    document.getElementById("screenInfo").innerHTML = "screenInfo " + document.body.clientWidth + " " + document.body.clientHeight;
+    // document.getElementById("canvasInfo").innerHTML = "canvasInfo " + canvas.width + " " + canvas.height;
+    //
+    // document.getElementById("info").innerHTML = "drawCircle " + centerX + " " + centerY +
+    //   " " + radius;
+    // document.getElementById("screenInfo").innerHTML = "screenInfo " + document.body.clientWidth + " " + document.body.clientHeight;
 
 
     // function resizeCanvas() {
