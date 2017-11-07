@@ -14,6 +14,19 @@ c.height = window.innerHeight;
 
 // Clear screen
 ctx.clearRect(0,0,c.width,c.height);
+// draw circle
+function drawRaindrop() {
+  ctx.beginPath();
+  ctx.arc(
+    Math.round(Math.random() * c.width),
+    Math.round(Math.random() * c.height),
+    Math.round(Math.random() * r),
+    0,
+    2*Math.PI
+  );
+  ctx.stroke();
+  ctx.closePath();
+}
 
 // draw - where all the animation take place
 function draw() {
@@ -22,19 +35,9 @@ function draw() {
   ctx.fillStyle="#FFFFFF";
   ctx.fillRect(0,0,c.width,c.height);
   ctx.globalAlpha=1.0;
-  ctx.beginPath();
-
   if (count == 10) {
     // draw random raindrop
-    ctx.arc(
-      Math.round(Math.random() * c.width),
-      Math.round(Math.random() * c.height),
-      Math.round(Math.random() * r),
-      0,
-      2*Math.PI
-    );
-    ctx.stroke();
-    ctx.closePath();
+    drawRaindrop ();
     count = 0;
   }
   count += 1;
