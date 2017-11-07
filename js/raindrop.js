@@ -35,6 +35,8 @@ function draw() {
   ctx.fillStyle="#FFFFFF";
   ctx.fillRect(0,0,c.width,c.height);
   ctx.globalAlpha=1.0;
+
+  // draw random raindrop with delay
   if (count == 10) {
     // draw random raindrop
     drawRaindrop ();
