@@ -1,0 +1,30 @@
+html,
+body {
+  overflow: hidden;
+}
+
+
+
+
+canvas {
+  /*display: block;*/
+  /*height: 100%;*/
+  /*height: 300px;*/
+  left: 0px;
+  /*margin: auto;*/
+  /*padding: 0;*/
+  position: absolute;
+  top: 0px;
+  /*width: 100%;*/
+  /*width: 300px;*/
+  border: 1px solid black;
+}
+
+/*body,
+html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
