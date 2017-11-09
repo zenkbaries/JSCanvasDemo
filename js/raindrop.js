@@ -39,7 +39,7 @@ function draw() {
   // draw random raindrop with delay
   if (count == 10) {
     // draw random raindrop
-    drawRaindrop ();
+    drawRaindrop();
     count = 0;
   }
   count += 1;
