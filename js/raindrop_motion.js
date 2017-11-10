@@ -7,8 +7,10 @@ var ctx = c.getContext("2d");
 var r = 250;
 var count = 0;
 var drops = [];
-var bgColor = "#ffffff";
-var dropColor = "#000000";
+// var bgColor = "#ffffff";
+// var dropColor = "#000000";
+var bgColor = "#000000";
+var dropColor = "#ffffff";
 
 // set canvas size
 c.width = window.innerWidth;
@@ -30,6 +32,7 @@ function drawRaindrop(dX,dY,dR, dAge) {
   fade = (dR-dAge)/dR;
   ctx.globalAlpha = fade;
   ctx.beginPath();
+  ctx.strokeStyle = dropColor;
   ctx.arc( dX, dY, dAge, 0, 2*Math.PI );
   ctx.stroke();
   ctx.closePath();
