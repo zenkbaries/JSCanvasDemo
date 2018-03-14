@@ -1,14 +1,11 @@
 
+//
+//  Canvas
+//
 
-
-//  Declaration
+//  Canvas Declaration
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
-var r = 250;
-var count = 0;
-var drops = [];
-// var bgColor = "#ffffff";
-// var dropColor = "#000000";
 var bgColor = "#000000";
 var dropColor = "#ffffff";
 
@@ -18,6 +15,17 @@ c.height = window.innerHeight;
 
 // Clear screen
 ctx.clearRect(0,0,c.width,c.height);
+
+
+//
+//  Raindrops algorithm
+//
+
+// Raindrop Declaration
+var r = 250; // max size of ripples
+var count = 0;
+var drops = [];
+
 
 // Raindrops class
 function Raindrops() {
@@ -38,6 +46,10 @@ function drawRaindrop(dX,dY,dR, dAge) {
   ctx.closePath();
   ctx.globalAlpha = 1.0;
 }
+
+//
+//  Raindrops drawing for Animation
+//
 
 // draw - where all the animation take place
 function draw() {
@@ -61,11 +73,16 @@ function draw() {
     if (eachDrop.age >= eachDrop.r) {
       drops.splice(i,1);
     }
+    // this next line needs refactoring
     drawRaindrop(eachDrop.x, eachDrop.y, eachDrop.r, eachDrop.age);
   }
   count += 1;
 
 }
+
+//
+//  Animation
+//
 
 // Initalize the animationFrame
 window.requestAnimFrame = (
@@ -79,7 +96,7 @@ window.requestAnimFrame = (
   }
 )();
 
-// animat function
+// animate function
 function animate() {
   requestAnimFrame(animate);
   draw();
