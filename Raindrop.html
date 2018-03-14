@@ -6,13 +6,38 @@
 </head>
 
 <body>
-  <p>
-    Hello
-  </p>
-  <canvas id="myCanvas">
-    <script src="js/raindrop_motion.js"></script>
-  </canvas>
+  <header>
+    <h1>Animation on HTML5 Canvas</h1>
+  </header>
+  <section>
+    <div class="description">
+      <p>
+        This code is a raindrop animation I created to mimic raindrop on water with ripples fading as it radiate out.
+      </p>
+    </div>
+    <div class="canvas_wrapper">
+      <canvas id="myCanvas">
+        <script src="js/raindrop_motion.js"></script>
+      </canvas>
+      <p>
+        Simple Raindrop animation
+      </p>
+    </div>
+    <div class="code_block">
+      <pre>
+        <code>
+          // Raindrops class
+          function Raindrops() {
+            this.x    = Math.round(Math.random() * c.width);
+            this.y    = Math.round(Math.random() * c.height);
+            this.r    = Math.round(Math.random() * r);
+            this.age  = 0;
+          }
+        </code>
+      </pre>
 
+    </div>
+  </section>
 </body>
 
 </html>
