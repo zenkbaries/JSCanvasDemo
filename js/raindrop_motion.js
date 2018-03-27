@@ -7,7 +7,6 @@
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 var bgColor = "#000000";
-var dropColor = "#ffffff";
 
 // set canvas size
 c.width = window.innerWidth;
@@ -25,6 +24,8 @@ ctx.clearRect(0,0,c.width,c.height);
 var r = 250; // max size of ripples
 var count = 0;
 var drops = [];
+var dropColor = "#ffffff";
+
 
 
 // Raindrops class

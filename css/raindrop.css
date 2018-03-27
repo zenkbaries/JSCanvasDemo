@@ -1,8 +1,9 @@
 body {
+  display:flex;
   background-color: #999;
   font-family: Verdana, Geneva, sans-serif;
-  margin: 25px;
-  padding: 50px;
+  margin: 0;
+  padding: 0;
 }
 header h1 {
   text-align: center;
@@ -33,4 +34,47 @@ canvas_wrapper {
 
 pre {
   background: #ccc;
+}
+
+
+.navigation {
+  background: #999;
+  width: 250px;
+}
+
+.navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #555;
+}
+
+.navigation ul li {
+  text-align:center;
+  border-bottom: 1px solid #555;
+}
+
+.navigation ul li:last-child {
+  border-bottom: none;
+}
+
+.navigation ul li a {
+  display: block;
+  text-decoration: none;
+  padding: 15px;
+}
+
+.navigation ul li a:hover {
+    background-color: #555;
+    color: white;
+}
+
+.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.main {
+  background: #DDD;
+  width: 100%;
 }
