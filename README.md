@@ -1,7 +1,7 @@
 # JSCanvasDemo
 ___
 
-It's a demonstration of using animation with HTML5's Canvas element.
+It's a demonstration of using animation with HTML5's `<canvas></canvas>` element.
 
 ### Todo:
 
