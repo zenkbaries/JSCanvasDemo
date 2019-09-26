@@ -8,7 +8,7 @@ html, body {
 canvas {
 
   left: 0px;
-  position: absolute;
+  position: relative;
   top: 0px;
   border: 1px solid black;
 }
